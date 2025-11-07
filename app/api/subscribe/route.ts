@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+// Configure Edge Runtime for Cloudflare Pages
+export const runtime = 'edge'
+
 const MAILERLITE_WORKER_URL = process.env.MAILERLITE_WORKER_URL
 const GROUP_IDS = {
   e8: process.env.MAILERLITE_GROUP_ID_E8,
