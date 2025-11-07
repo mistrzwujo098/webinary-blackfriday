@@ -59,7 +59,7 @@ export default function AboutMe() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-paulina-primary to-paulina-accent rounded-full blur-2xl opacity-20"></div>
               <Image
-                src="/avatar.jpg"
+                src="https://paulinaodmatematyki.com/wp-content/uploads/2025/11/avatar.webp"
                 alt="Paulina od Matematyki"
                 width={300}
                 height={300}
