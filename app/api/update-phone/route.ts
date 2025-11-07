@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const MAILERLITE_API_KEY = process.env.MAILERLITE_API_KEY
+const MAILERLITE_WORKER_URL = process.env.MAILERLITE_WORKER_URL
 
 interface UpdatePhoneRequest {
   email: string
@@ -20,70 +20,57 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    if (!MAILERLITE_API_KEY) {
-      console.error('MAILERLITE_API_KEY not configured')
+    if (!MAILERLITE_WORKER_URL) {
+      console.error('MAILERLITE_WORKER_URL not configured')
       return NextResponse.json(
         { success: false, error: 'Błąd konfiguracji serwera' },
         { status: 500 }
       )
     }
 
-    // Najpierw znajdź subskrybenta po emailu
-    const searchResponse = await fetch(
-      `https://connect.mailerlite.com/api/subscribers?filter[email]=${encodeURIComponent(email)}`,
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${MAILERLITE_API_KEY}`,
-          'Accept': 'application/json'
-        }
+    // Przygotuj dane dla Workera
+    // MailerLite automatycznie zaktualizuje subskrybenta jeśli email już istnieje
+    const workerData = {
+      email,
+      fields: {
+        phone: phone
       }
-    )
-
-    if (!searchResponse.ok) {
-      console.error('MailerLite search error:', await searchResponse.text())
-      return NextResponse.json(
-        { success: false, error: 'Nie znaleziono użytkownika z tym adresem email. Upewnij się, że podałeś ten sam email, którego użyłeś przy zapisie.' },
-        { status: 404 }
-      )
     }
 
-    const searchData = await searchResponse.json()
+    // Wyślij do Cloudflare Worker
+    const response = await fetch(MAILERLITE_WORKER_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(workerData)
+    })
 
-    if (!searchData.data || searchData.data.length === 0) {
-      return NextResponse.json(
-        { success: false, error: 'Nie znaleziono użytkownika z tym adresem email. Upewnij się, że podałeś ten sam email, którego użyłeś przy zapisie.' },
-        { status: 404 }
-      )
-    }
+    const responseData = await response.json()
 
-    const subscriberId = searchData.data[0].id
+    if (!response.ok) {
+      console.error('Worker API error:', responseData)
 
-    // Zaktualizuj numer telefonu
-    const updateResponse = await fetch(
-      `https://connect.mailerlite.com/api/subscribers/${subscriberId}`,
-      {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${MAILERLITE_API_KEY}`,
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          fields: {
-            phone: phone
-          }
+      // Jeśli użytkownik już istnieje, to jest OK - właśnie chcieliśmy go zaktualizować
+      if (responseData.code === 'ALREADY_SUBSCRIBED') {
+        console.log(`Phone updated for existing subscriber: ${email}`)
+        return NextResponse.json({
+          success: true,
+          message: 'Numer telefonu został pomyślnie dodany!'
         })
       }
-    )
 
-    if (!updateResponse.ok) {
-      const errorData = await updateResponse.json()
-      console.error('MailerLite update error:', errorData)
+      // Jeśli użytkownik nie istnieje
+      if (response.status === 404 || responseData.error?.includes('nie znaleziono')) {
+        return NextResponse.json(
+          { success: false, error: 'Nie znaleziono użytkownika z tym adresem email. Upewnij się, że podałeś ten sam email, którego użyłeś przy zapisie.' },
+          { status: 404 }
+        )
+      }
+
       return NextResponse.json(
-        { success: false, error: 'Nie udało się zaktualizować numeru telefonu.' },
-        { status: 500 }
+        { success: false, error: responseData.error || 'Nie udało się zaktualizować numeru telefonu.' },
+        { status: response.status }
       )
     }
 

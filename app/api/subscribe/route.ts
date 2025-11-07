@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const MAILERLITE_API_KEY = process.env.MAILERLITE_API_KEY
+const MAILERLITE_WORKER_URL = process.env.MAILERLITE_WORKER_URL
 const GROUP_IDS = {
   e8: process.env.MAILERLITE_GROUP_ID_E8,
   matura: process.env.MAILERLITE_GROUP_ID_MATURA
@@ -27,8 +27,8 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    if (!MAILERLITE_API_KEY) {
-      console.error('MAILERLITE_API_KEY not configured')
+    if (!MAILERLITE_WORKER_URL) {
+      console.error('MAILERLITE_WORKER_URL not configured')
       return NextResponse.json(
         { success: false, error: 'Błąd konfiguracji serwera' },
         { status: 500 }
@@ -46,53 +46,49 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Przygotuj dane dla MailerLite
-    const subscriberData: any = {
+    // Przygotuj dane dla Workera
+    const workerData: any = {
       email,
-      fields: {
-        name,
-      },
-      groups: [groupId]
+      name,
+      groupId,
+      fields: {}
     }
 
     // Dodaj opcjonalne pola
     if (phone) {
-      subscriberData.fields.phone = phone
+      workerData.fields.phone = phone
     }
 
     if (level && type === 'matura') {
-      subscriberData.fields.level = level
+      workerData.fields.level = level
     }
 
-    // Wyślij do MailerLite API
-    const response = await fetch(
-      'https://connect.mailerlite.com/api/subscribers',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${MAILERLITE_API_KEY}`,
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(subscriberData)
-      }
-    )
+    // Wyślij do Cloudflare Worker
+    const response = await fetch(MAILERLITE_WORKER_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(workerData)
+    })
 
     const responseData = await response.json()
 
     if (!response.ok) {
-      console.error('MailerLite API error:', responseData)
+      console.error('Worker API error:', responseData)
 
       // Sprawdź czy subscriber już istnieje
-      if (response.status === 422 && responseData.message?.includes('already exists')) {
-        // Subscriber już istnieje - możemy uznać to za sukces
+      if (responseData.code === 'ALREADY_SUBSCRIBED') {
         return NextResponse.json({
           success: true,
           message: 'Jesteś już zapisany/a na ten webinar!'
         })
       }
 
-      throw new Error('MailerLite API error')
+      return NextResponse.json(
+        { success: false, error: responseData.error || 'Coś poszło nie tak. Spróbuj ponownie.' },
+        { status: response.status }
+      )
     }
 
     // Tracking events (opcjonalnie - możesz dodać server-side tracking)
@@ -100,7 +96,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'Zostałeś/aś pomyślnie zapisany/a na webinar!'
+      message: responseData.message || 'Zostałeś/aś pomyślnie zapisany/a na webinar!'
     })
   } catch (error) {
     console.error('Subscribe error:', error)
