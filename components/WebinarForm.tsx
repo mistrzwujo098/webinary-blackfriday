@@ -38,7 +38,7 @@ export default function WebinarForm({ type, date, time }: WebinarFormProps) {
     setError(null)
 
     try {
-      const response = await fetch('/api/subscribe', {
+      const response = await fetch('/webinar/api/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ export default function WebinarForm({ type, date, time }: WebinarFormProps) {
         }
 
         // Redirect do strony podziękowania
-        window.location.href = '/dziekujemy'
+        window.location.href = '/webinar/dziekujemy'
       } else {
         setError(data.error || 'Coś poszło nie tak. Spróbuj ponownie.')
       }

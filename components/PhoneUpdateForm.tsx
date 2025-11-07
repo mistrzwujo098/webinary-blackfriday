@@ -17,7 +17,7 @@ export default function PhoneUpdateForm() {
     setError(null)
 
     try {
-      const response = await fetch('/api/update-phone', {
+      const response = await fetch('/webinar/api/update-phone', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

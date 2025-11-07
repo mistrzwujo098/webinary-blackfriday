@@ -18,6 +18,8 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
   const router = useRouter()
   const [email, setEmail] = useState('')
   const [consent, setConsent] = useState(false)
+  const [wantSmsReminder, setWantSmsReminder] = useState(false)
+  const [phone, setPhone] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
 
@@ -45,19 +47,43 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
       return
     }
 
+    if (wantSmsReminder && !phone) {
+      setError('Podaj numer telefonu aby otrzymać przypomnienie SMS')
+      return
+    }
+
     setIsSubmitting(true)
 
     try {
-      // Tutaj będzie integracja z MailerLite
-      // Na razie symulacja opóźnienia
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      // Zapisz do MailerLite przez API
+      const response = await fetch('/webinar/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          name: '', // WebinarFormOptimized nie ma pola name
+          phone: wantSmsReminder && phone ? phone : undefined,
+          type: type === 'egzamin' ? 'egzamin' : 'matura',
+          level: undefined
+        }),
+      })
+
+      const data = await response.json()
+
+      if (!data.success) {
+        setError(data.error || 'Coś poszło nie tak. Spróbuj ponownie.')
+        setIsSubmitting(false)
+        return
+      }
 
       // Tracking Lead Event - WAŻNE: trackuje na wszystkich platformach
       // (Facebook Pixel, Google Ads, TikTok Pixel)
       tracking.lead(email, `Webinar ${type === 'egzamin' ? 'Egzamin 8-klasisty' : 'Matura'}`)
 
       // Przekierowanie na thank you page
-      router.push('/dziekujemy')
+      router.push('/webinar/dziekujemy')
     } catch (err) {
       setError('Coś poszło nie tak. Spróbuj ponownie.')
       setIsSubmitting(false)
@@ -105,6 +131,42 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
                 className="w-full px-5 py-4 text-lg border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-paulina-primary focus:border-transparent outline-none transition-all"
               />
             </div>
+
+            {/* Checkbox SMS Reminder */}
+            <div>
+              <label className="flex items-start cursor-pointer group">
+                <input
+                  type="checkbox"
+                  checked={wantSmsReminder}
+                  onChange={(e) => {
+                    setWantSmsReminder(e.target.checked)
+                    if (!e.target.checked) setPhone('')
+                  }}
+                  className="w-5 h-5 mt-1 text-paulina-primary focus:ring-paulina-primary rounded flex-shrink-0"
+                />
+                <span className="ml-3 text-sm text-gray-700 leading-relaxed font-medium">
+                  Chcę przypomnienie SMS godzinę przed webinarem (opcjonalnie)
+                </span>
+              </label>
+            </div>
+
+            {/* Pole telefonu - pokazuje się tylko gdy checkbox zaznaczony */}
+            {wantSmsReminder && (
+              <div>
+                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                  Numer telefonu
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  required
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="+48 123 456 789"
+                  className="w-full px-5 py-4 text-lg border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-paulina-primary focus:border-transparent outline-none transition-all"
+                />
+              </div>
+            )}
 
             {/* Zgoda RODO */}
             <div>
