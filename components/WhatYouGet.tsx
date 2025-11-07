@@ -31,11 +31,11 @@ export default function WhatYouGet({ type }: WhatYouGetProps) {
     {
       icon: <Clock className="w-8 h-8" />,
       title: 'System 15 minut dziennie',
-      description: 'O której godzinie, jak zacząć, co robić gdy dziecko się opiera'
+      description: 'O której godzinie, jak zacząć, co robić, gdy dziecko się opiera'
     },
     {
       icon: <HelpCircle className="w-8 h-8" />,
-      title: 'Pytania i odpowiedzi live',
+      title: 'Pytania i odpowiedzi na żywo',
       description: 'Masz konkretny problem? Pytaj, odpowiem wszystkim'
     }
   ]
@@ -48,8 +48,8 @@ export default function WhatYouGet({ type }: WhatYouGetProps) {
     },
     {
       icon: <FileText className="w-8 h-8" />,
-      title: 'Checklist "Co umieć na 80%"',
-      description: 'Konkretne umiejętności które dają najwięcej punktów'
+      title: 'Checklista "Co umieć na 80%"',
+      description: 'Konkretne umiejętności, które dają najwięcej punktów'
     },
     {
       icon: <Clock className="w-8 h-8" />,
@@ -59,11 +59,11 @@ export default function WhatYouGet({ type }: WhatYouGetProps) {
     {
       icon: <MessageCircle className="w-8 h-8" />,
       title: '3 techniki zarządzania stresem',
-      description: 'Nie "wierz w siebie", konkretne ćwiczenia które działają'
+      description: 'Nie "wierz w siebie", konkretne ćwiczenia, które działają'
     },
     {
       icon: <HelpCircle className="w-8 h-8" />,
-      title: 'Q&A na żywo',
+      title: 'Pytania i odpowiedzi na żywo',
       description: 'Pytania o twoje konkretne problemy, odpowiedzi dla wszystkich'
     }
   ]

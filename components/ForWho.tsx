@@ -16,7 +16,7 @@ export default function ForWho() {
   ]
 
   const also = [
-    'Jesteś rodzicem maturzysty i chcesz wiedzieć jak wspierać bez presji'
+    'Jesteś rodzicem maturzysty i chcesz wiedzieć, jak wspierać bez presji'
   ]
 
   const fadeInUp = shouldReduceMotion
@@ -43,7 +43,7 @@ export default function ForWho() {
           className="bg-white rounded-3xl shadow-xl p-6 sm:p-10 mb-8"
         >
           <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">
-            Ten webinar jest dla ciebie jeśli:
+            Ten webinar jest dla ciebie, jeśli:
           </h3>
           <ul className="space-y-4">
             {points.map((point, index) => {

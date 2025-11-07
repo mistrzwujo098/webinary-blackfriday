@@ -24,13 +24,13 @@ export default function AboutMe() {
     },
     {
       icon: <Users className="w-6 h-6" />,
-      value: '20 000+',
-      label: 'rodzin'
+      value: '24 000+',
+      label: 'kursantów'
     },
     {
       icon: <TrendingUp className="w-6 h-6" />,
       value: '84%',
-      label: 'średnia wynik'
+      label: 'średni wynik'
     },
     {
       icon: <Heart className="w-6 h-6" />,

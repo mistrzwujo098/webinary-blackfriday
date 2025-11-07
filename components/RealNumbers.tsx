@@ -95,7 +95,7 @@ export default function RealNumbers() {
             To nie przypadek. To system, który działa.
           </p>
           <p className="text-lg sm:text-xl text-gray-600">
-            Na webinarze pokażę go dokładnie.
+            Na webinarze pokażę go krok po kroku.
           </p>
         </motion.div>
       </div>

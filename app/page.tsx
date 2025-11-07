@@ -26,7 +26,7 @@ export default function HomePage() {
                 13 listopada, 18:00
               </p>
               <p className="text-gray-600 mb-6">
-                System 15 minut dziennie dla rodziców ósmoklas istów
+                System 15 minut dziennie dla rodziców ósmoklasistów
               </p>
               <div className="flex items-center justify-center gap-2 text-paulina-accent font-bold">
                 Zapisz się <ArrowRight className="w-5 h-5" />
@@ -57,7 +57,7 @@ export default function HomePage() {
         </div>
 
         <p className="mt-12 text-gray-600">
-          Webinary prowadzi <strong>Paulina</strong> — 8 lat doświadczenia, 20 000+ rodzin
+          Webinary prowadzi <strong>Paulina</strong> — 16 lat doświadczenia, 24 000+ kursantów
         </p>
       </div>
     </main>

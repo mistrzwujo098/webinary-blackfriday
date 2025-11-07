@@ -70,7 +70,7 @@ export default function TwoOptions() {
           {...fadeInUp}
           className="text-xl sm:text-2xl text-center text-gray-800 mt-12 font-medium"
         >
-          Na webinarze pokażę dokładnie jak przejść ze scenariusza A do B.
+          Na webinarze pokażę dokładnie, jak przejść ze scenariusza A do B.
         </motion.p>
       </div>
     </section>

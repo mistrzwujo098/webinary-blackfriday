@@ -42,7 +42,7 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
     }
 
     if (wantSmsReminder && !phone) {
-      setError('Podaj numer telefonu aby otrzymać przypomnienie SMS')
+      setError('Podaj numer telefonu, aby otrzymać przypomnienie SMS')
       return
     }
 

@@ -101,7 +101,7 @@ export default function ThankYouPage() {
         {/* Social Media - Dołącz do społeczności */}
         <div className="bg-paulina-bg-yellow rounded-3xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-paulina-primary mb-4 text-center">
-            Podczas gdy czekasz...
+            W międzyczasie...
           </h2>
 
           <p className="text-center text-gray-700 mb-6">

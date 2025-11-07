@@ -65,7 +65,7 @@ export default function HeroEgzamin() {
           {...fadeIn}
           className="text-sm sm:text-base text-gray-600 max-w-xl mx-auto"
         >
-          Webinar prowadzi <strong>Paulina</strong> — 16 lat doświadczenia, 20 000+ rodzin
+          Webinar prowadzi <strong>Paulina</strong> — 16 lat doświadczenia, 24 000+ kursantów
         </motion.p>
 
         <motion.div
