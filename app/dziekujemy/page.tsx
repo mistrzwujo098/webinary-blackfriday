@@ -1,11 +1,8 @@
+'use client'
+
 import { CheckCircle, Mail, Calendar, Bell } from 'lucide-react'
 import Link from 'next/link'
-
-export const metadata = {
-  title: 'Dziękujemy za zapis! - Webinar Paulina od Matematyki',
-  description: 'Potwierdzenie zapisu na webinar. Sprawdź swoją skrzynkę email.',
-  robots: 'noindex, nofollow', // Nie indeksuj thank you page
-}
+import PhoneUpdateForm from '@/components/PhoneUpdateForm'
 
 export default function ThankYouPage() {
   return (
@@ -50,7 +47,7 @@ export default function ThankYouPage() {
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  Za 2-5 minut otrzymasz wiadomość z <strong>linkiem do webinaru</strong> i szczegółami.
+                  Za 2-5 minut otrzymasz wiadomość z <strong>potwierdzeniem zapisu</strong> i szczegółami.
                   Jeśli nie widzisz emaila, sprawdź folder SPAM lub Oferty.
                 </p>
               </div>
@@ -94,6 +91,11 @@ export default function ThankYouPage() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Phone Update Form */}
+        <div className="mb-8">
+          <PhoneUpdateForm />
         </div>
 
         {/* Social Media - Dołącz do społeczności */}

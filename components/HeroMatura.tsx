@@ -65,7 +65,7 @@ export default function HeroMatura() {
           {...fadeIn}
           className="text-sm sm:text-base text-gray-600 max-w-xl mx-auto"
         >
-          Webinar prowadzi <strong>Paulina</strong> — 8 lat przygotowywania do matur, 24 000+ kursantów, średnia powyżej 80%
+          Webinar prowadzi <strong>Paulina</strong> — 16 lat przygotowywania do matury, 24 000+ kursantów, średnia powyżej 80%
         </motion.p>
 
         <motion.div

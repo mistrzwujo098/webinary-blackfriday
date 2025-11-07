@@ -43,11 +43,11 @@ export default function SimpleQuestion() {
           </p>
 
           <p className="font-semibold text-gray-800">
-            Na webinarze pokażę system który sprawia że moi kursanci mają średnią powyżej 80%.
+            Na webinarze pokażę system, który sprawia, że moi kursanci mają średnią powyżej 80%.
           </p>
 
           <p>
-            Nie bo są geniuszami. Bo mają <strong>plan</strong>.
+            Nie dlatego, że są geniuszami. Bo mają <strong>plan</strong>.
           </p>
         </motion.div>
       </div>

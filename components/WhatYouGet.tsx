@@ -54,7 +54,7 @@ export default function WhatYouGet({ type }: WhatYouGetProps) {
     {
       icon: <Clock className="w-8 h-8" />,
       title: 'System 20 minut dziennie',
-      description: 'Jak organizować naukę żeby nie marnować czasu'
+      description: 'Jak organizować naukę, aby nie marnować czasu'
     },
     {
       icon: <MessageCircle className="w-8 h-8" />,
@@ -136,7 +136,7 @@ export default function WhatYouGet({ type }: WhatYouGetProps) {
           {...fadeInUp}
           className="text-lg sm:text-xl text-center text-gray-700 mt-12 font-medium max-w-2xl mx-auto"
         >
-          To nie będzie gadanie o niczym. Konkretne narzędzia które możesz użyć od piątku.
+          To nie będzie gadanie o niczym. Konkretne narzędzia, które możesz wdrożyć już od piątku.
         </motion.p>
       </div>
     </section>

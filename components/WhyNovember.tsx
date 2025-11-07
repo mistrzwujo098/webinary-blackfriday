@@ -50,13 +50,13 @@ export default function WhyNovember() {
               Jeśli zaczniesz w marcu?
             </p>
             <p className="text-red-700">
-              2 miesiące. 60 minut dziennie żeby nadrobić. Panika.
+              2 miesiące. 60 minut dziennie, aby nadrobić. Panika.
             </p>
           </div>
 
           <p className="text-center">
-            Widziałam setki osób które zaczynały w marcu.<br />
-            Większość nie wytrzymuje tego tempa. Stres rośnie. Efekty? Gorsze.
+            Widziałam setki osób, które zaczynały w marcu.<br />
+            Większość nie wytrzymywała tego tempa. Stres rósł. Efekty? Gorsze.
           </p>
 
           <p className="text-center font-bold text-paulina-primary text-2xl">

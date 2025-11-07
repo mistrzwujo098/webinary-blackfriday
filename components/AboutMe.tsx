@@ -20,7 +20,7 @@ export default function AboutMe() {
   const stats = [
     {
       icon: <Award className="w-6 h-6" />,
-      value: '8 lat',
+      value: '16 lat',
       label: 'doświadczenia'
     },
     {
@@ -59,7 +59,7 @@ export default function AboutMe() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-paulina-primary to-paulina-accent rounded-full blur-2xl opacity-20"></div>
               <Image
-                src="/webinar/avatar.jpg"
+                src="/avatar.jpg"
                 alt="Paulina od Matematyki"
                 width={300}
                 height={300}
@@ -84,12 +84,12 @@ export default function AboutMe() {
             </div>
 
             <p className="text-lg text-gray-700 leading-relaxed">
-              Od 8 lat pomagam uczniom i ich rodzicom w przygotowaniach do egzaminów.
+              Od 16 lat pomagam uczniom i ich rodzicom w przygotowaniach do egzaminów.
               Przekonałam się, że <strong>systematyczność bije korepetycje</strong>.
             </p>
 
             <p className="text-lg text-gray-700 leading-relaxed">
-              Stworzyłam system który działa — bez wieczornych kłótni, bez stresu,
+              Stworzyłam system, który działa — bez wieczornych kłótni, bez stresu,
               bez przepłacania za korepetycje. <strong>15-20 minut dziennie</strong> wystarczy.
             </p>
 

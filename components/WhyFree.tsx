@@ -37,12 +37,12 @@ export default function WhyFree() {
           className="space-y-6 text-lg sm:text-xl text-gray-600 leading-relaxed"
         >
           <p>
-            Chcę żebyś poznała sposób w jaki uczę. Zanim wydasz złotówkę.
+            Chcę, żebyś poznała sposób, w jaki uczę. Zanim wydasz złotówkę.
           </p>
 
           <p className="font-semibold text-gray-800">
             80% webinaru to czysta wartość — system, plan, techniki.<br />
-            20% to opcja kupienia kursu dla tych co chcą iść dalej.
+            20% to opcja kupienia kursu dla tych, którzy chcą iść dalej.
           </p>
 
           <p>

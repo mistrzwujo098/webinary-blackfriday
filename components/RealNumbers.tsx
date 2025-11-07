@@ -11,7 +11,7 @@ export default function RealNumbers() {
     {
       icon: <Users className="w-8 h-8" />,
       value: '24 000',
-      label: 'kursantów łącznie przez 8 lat'
+      label: 'kursantów łącznie przez 16 lat'
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
@@ -21,7 +21,7 @@ export default function RealNumbers() {
     {
       icon: <Award className="w-8 h-8" />,
       value: '99,9%',
-      label: 'zdawalność wśród tych co ukończyli program'
+      label: 'zdawalność wśród tych, którzy ukończyli program'
     },
     {
       icon: <Star className="w-8 h-8" />,
@@ -92,7 +92,7 @@ export default function RealNumbers() {
           className="text-center space-y-4"
         >
           <p className="text-xl sm:text-2xl font-bold text-gray-800">
-            To nie przypadek. To system który działa.
+            To nie przypadek. To system, który działa.
           </p>
           <p className="text-lg sm:text-xl text-gray-600">
             Na webinarze pokażę go dokładnie.

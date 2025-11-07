@@ -11,7 +11,7 @@ export default function ForWho() {
     'Piszesz maturę podstawową albo rozszerzoną za 6 miesięcy',
     'Czujesz stres "dam radę czy nie?"',
     'Chcesz przekroczyć 60%, 70%, 80% albo więcej',
-    'Nie wiesz jak organizować naukę żeby nie tracić czasu',
+    'Nie wiesz, jak organizować naukę, aby nie tracić czasu',
     'Patrzysz na zadania i myślisz "od czego zacząć?"'
   ]
 

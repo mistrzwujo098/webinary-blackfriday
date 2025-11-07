@@ -65,7 +65,7 @@ export default function HeroEgzamin() {
           {...fadeIn}
           className="text-sm sm:text-base text-gray-600 max-w-xl mx-auto"
         >
-          Webinar prowadzi <strong>Paulina</strong> — 8 lat uczenia matematyki, 20 000+ rodzin przez lata
+          Webinar prowadzi <strong>Paulina</strong> — 16 lat doświadczenia, 20 000+ rodzin
         </motion.p>
 
         <motion.div

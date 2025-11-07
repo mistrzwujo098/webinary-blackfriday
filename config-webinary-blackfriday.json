@@ -1,0 +1,14 @@
+{
+  "facebook": {
+    "pixelId": "TWOJ_FACEBOOK_PIXEL_ID",
+    "accessToken": "TWOJ_FACEBOOK_CAPI_ACCESS_TOKEN"
+  },
+  "google": {
+    "conversionId": "AW-TWOJ_GOOGLE_ADS_ID",
+    "conversionLabel": "OPCJONALNY_LABEL"
+  },
+  "tiktok": {
+    "pixelId": "TWOJ_TIKTOK_PIXEL_ID",
+    "accessToken": "TWOJ_TIKTOK_EVENTS_API_TOKEN"
+  }
+}

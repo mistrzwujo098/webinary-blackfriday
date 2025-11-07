@@ -17,8 +17,11 @@ export default function WebinarForm({ type, date, time }: WebinarFormProps) {
     email: '',
     phone: '',
     level: type === 'matura' ? 'podstawowa' : '',
-    consent: false
+    consent: false,
+    wantSmsReminder: false
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const fadeInUp = shouldReduceMotion
     ? { initial: { opacity: 1 }, animate: { opacity: 1 } }
@@ -31,9 +34,66 @@ export default function WebinarForm({ type, date, time }: WebinarFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Tutaj będzie integracja z MailerLite
-    console.log('Form submitted:', formData)
-    alert('Zapisano! (To tylko demo - integracja MailerLite będzie dodana)')
+    setIsSubmitting(true)
+    setError(null)
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          name: formData.name,
+          phone: formData.wantSmsReminder && formData.phone ? formData.phone : undefined,
+          type: type === 'egzamin' ? 'egzamin' : 'matura',
+          level: type === 'matura' ? formData.level : undefined
+        }),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        // Facebook Pixel - Lead Event
+        if (typeof window !== 'undefined' && (window as any).fbq) {
+          (window as any).fbq('track', 'Lead', {
+            content_name: `Webinar ${type === 'egzamin' ? 'Egzamin 8' : 'Matura'}`,
+            content_category: 'Webinar Registration',
+            value: 0,
+            currency: 'PLN'
+          })
+        }
+
+        // Google Ads - Conversion Event
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          (window as any).gtag('event', 'conversion', {
+            'send_to': 'AW-405660852/xyz', // Dodaj conversion label jeśli masz
+            'value': 0,
+            'currency': 'PLN'
+          })
+        }
+
+        // TikTok Pixel - CompleteRegistration Event
+        if (typeof window !== 'undefined' && (window as any).ttq) {
+          (window as any).ttq.track('CompleteRegistration', {
+            content_name: `Webinar ${type === 'egzamin' ? 'Egzamin 8' : 'Matura'}`,
+            value: 0,
+            currency: 'PLN'
+          })
+        }
+
+        // Redirect do strony podziękowania
+        window.location.href = '/dziekujemy'
+      } else {
+        setError(data.error || 'Coś poszło nie tak. Spróbuj ponownie.')
+      }
+    } catch (error) {
+      console.error('Subscribe error:', error)
+      setError('Błąd połączenia. Sprawdź internet i spróbuj ponownie.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -82,18 +142,35 @@ export default function WebinarForm({ type, date, time }: WebinarFormProps) {
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                Telefon <span className="text-gray-500">(opcjonalnie - przyślemy SMS przypominający godzinę przed)</span>
+              <label className="flex items-start cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={formData.wantSmsReminder}
+                  onChange={(e) => setFormData({ ...formData, wantSmsReminder: e.target.checked, phone: e.target.checked ? formData.phone : '' })}
+                  className="w-5 h-5 mt-1 text-paulina-primary focus:ring-paulina-primary rounded"
+                />
+                <span className="ml-3 text-sm text-gray-700">
+                  Chcę przypomnienie SMS godzinę przed webinarem (opcjonalnie)
+                </span>
               </label>
-              <input
-                type="tel"
-                id="phone"
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-paulina-primary focus:border-transparent outline-none transition-all text-base"
-                placeholder="+48 123 456 789"
-              />
             </div>
+
+            {formData.wantSmsReminder && (
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                  Numer telefonu
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  required
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-paulina-primary focus:border-transparent outline-none transition-all text-base"
+                  placeholder="+48 123 456 789"
+                />
+              </div>
+            )}
 
             {type === 'matura' && (
               <div>
@@ -137,13 +214,20 @@ export default function WebinarForm({ type, date, time }: WebinarFormProps) {
               </label>
             </div>
 
+            {error && (
+              <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4 text-red-700">
+                {error}
+              </div>
+            )}
+
             <motion.button
               type="submit"
+              disabled={isSubmitting}
               whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
               whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-              className="w-full bg-gradient-to-r from-paulina-primary to-pink-600 text-white font-bold text-lg sm:text-xl py-4 sm:py-5 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="w-full bg-gradient-to-r from-paulina-primary to-pink-600 text-white font-bold text-lg sm:text-xl py-4 sm:py-5 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Rezerwuję miejsce za darmo
+              {isSubmitting ? 'Zapisywanie...' : 'Rezerwuję miejsce za darmo'}
             </motion.button>
 
             <p className="text-center text-sm text-gray-600 mt-4">
