@@ -98,7 +98,6 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
                 type="email"
                 id="email"
                 required
-                autoFocus
                 autoComplete="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}

@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
-import Image from 'next/image'
 import { Award, Users, TrendingUp, Heart } from 'lucide-react'
 
 export default function AboutMe() {
@@ -58,13 +57,12 @@ export default function AboutMe() {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-paulina-primary to-paulina-accent rounded-full blur-2xl opacity-20"></div>
-              <Image
+              <img
                 src="https://paulinaodmatematyki.com/wp-content/uploads/2025/11/avatar.webp"
                 alt="Paulina od Matematyki"
-                width={300}
-                height={300}
+                width="300"
+                height="300"
                 className="relative rounded-full shadow-2xl border-4 border-white"
-                priority
               />
             </div>
           </motion.div>
