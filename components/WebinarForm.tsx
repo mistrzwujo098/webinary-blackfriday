@@ -17,7 +17,6 @@ export default function WebinarForm({ type, date, time }: WebinarFormProps) {
     email: '',
     phone: '',
     level: type === 'matura' ? 'podstawowa' : '',
-    consent: false,
     wantSmsReminder: false
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -199,21 +198,6 @@ export default function WebinarForm({ type, date, time }: WebinarFormProps) {
               </div>
             )}
 
-            <div>
-              <label className="flex items-start cursor-pointer">
-                <input
-                  type="checkbox"
-                  required
-                  checked={formData.consent}
-                  onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-                  className="w-5 h-5 mt-1 text-paulina-primary focus:ring-paulina-primary rounded"
-                />
-                <span className="ml-3 text-sm text-gray-600">
-                  Zgadzam się na przetwarzanie danych osobowych zgodnie z polityką prywatności
-                </span>
-              </label>
-            </div>
-
             {error && (
               <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4 text-red-700">
                 {error}
@@ -230,9 +214,22 @@ export default function WebinarForm({ type, date, time }: WebinarFormProps) {
               {isSubmitting ? 'Zapisywanie...' : 'Rezerwuję miejsce za darmo'}
             </motion.button>
 
-            <p className="text-center text-sm text-gray-600 mt-4">
-              Nagranie dostępne przez 24h po webinarze. Jeśli nie możesz być o {time} — obejrzysz później.
-            </p>
+            {/* Tekst informacyjny RODO */}
+            <div className="pt-4">
+              <p className="text-center text-xs text-gray-500 leading-relaxed">
+                Zapisując się do newslettera, wyrażasz zgodę na otrzymywanie informacji o nowościach, promocjach, produktach i usługach paulinaodmatematyki.com.
+                Twoje dane będą przetwarzane do celów związanych z wysyłką newslettera. Administratorem danych osobowych będzie Paulina Miś.
+                Szczegóły:{' '}
+                <a
+                  href="https://paulinaodmatematyki.com/polityka-prywatnosci"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-paulina-accent hover:text-paulina-primary underline"
+                >
+                  polityka prywatności
+                </a>
+              </p>
+            </div>
           </form>
         </motion.div>
       </div>

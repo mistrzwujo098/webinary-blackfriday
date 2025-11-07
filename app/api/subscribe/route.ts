@@ -11,7 +11,7 @@ const GROUP_IDS = {
 
 interface SubscribeRequest {
   email: string
-  name: string
+  name?: string
   phone?: string
   type: 'egzamin' | 'matura'
   level?: string
@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
     const { email, name, phone, type, level } = body
 
     // Walidacja
-    if (!email || !name || !type) {
+    if (!email || !type) {
       return NextResponse.json(
         { success: false, error: 'Brak wymaganych pól' },
         { status: 400 }
@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
     // Przygotuj dane dla Workera
     const workerData: any = {
       email,
-      name,
+      name: name || email.split('@')[0], // Jeśli brak imienia, użyj części emaila przed @
       groupId,
       fields: {}
     }

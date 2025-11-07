@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Lock, CheckCircle } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 import { tracking } from '@/lib/tracking'
 
 interface WebinarFormProps {
@@ -17,7 +17,6 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
   const shouldReduceMotion = useReducedMotion()
   const router = useRouter()
   const [email, setEmail] = useState('')
-  const [consent, setConsent] = useState(false)
   const [wantSmsReminder, setWantSmsReminder] = useState(false)
   const [phone, setPhone] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -42,11 +41,6 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
       return
     }
 
-    if (!consent) {
-      setError('Musisz zaakceptować politykę prywatności')
-      return
-    }
-
     if (wantSmsReminder && !phone) {
       setError('Podaj numer telefonu aby otrzymać przypomnienie SMS')
       return
@@ -63,10 +57,8 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
         },
         body: JSON.stringify({
           email: email,
-          name: '', // WebinarFormOptimized nie ma pola name
           phone: wantSmsReminder && phone ? phone : undefined,
           type: type === 'egzamin' ? 'egzamin' : 'matura',
-          level: undefined
         }),
       })
 
@@ -168,30 +160,6 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
               </div>
             )}
 
-            {/* Zgoda RODO */}
-            <div>
-              <label className="flex items-start cursor-pointer group">
-                <input
-                  type="checkbox"
-                  required
-                  checked={consent}
-                  onChange={(e) => setConsent(e.target.checked)}
-                  className="w-5 h-5 mt-1 text-paulina-primary focus:ring-paulina-primary rounded flex-shrink-0"
-                />
-                <span className="ml-3 text-sm text-gray-600 leading-relaxed">
-                  Zgadzam się na przetwarzanie danych osobowych zgodnie z{' '}
-                  <a
-                    href="https://paulinaodmatematyki.com/polityka-prywatnosci"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-paulina-accent hover:text-paulina-primary underline"
-                  >
-                    polityką prywatności
-                  </a>
-                </span>
-              </label>
-            </div>
-
             {/* Error message */}
             {error && (
               <div className="bg-red-50 border-2 border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
@@ -210,20 +178,21 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
               {isSubmitting ? 'Zapisuję...' : 'Rezerwuję miejsce za darmo'}
             </motion.button>
 
-            {/* Tekst pod przyciskiem */}
-            <div className="space-y-2">
-              <p className="text-center text-sm text-gray-600">
-                <strong>Natychmiastowy dostęp.</strong> Link na e-mail w ciągu 2 minut.
+            {/* Tekst informacyjny RODO */}
+            <div className="pt-4">
+              <p className="text-center text-xs text-gray-500 leading-relaxed">
+                Zapisując się do newslettera, wyrażasz zgodę na otrzymywanie informacji o nowościach, promocjach, produktach i usługach paulinaodmatematyki.com.
+                Twoje dane będą przetwarzane do celów związanych z wysyłką newslettera. Administratorem danych osobowych będzie Paulina Miś.
+                Szczegóły:{' '}
+                <a
+                  href="https://paulinaodmatematyki.com/polityka-prywatnosci"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-paulina-accent hover:text-paulina-primary underline"
+                >
+                  polityka prywatności
+                </a>
               </p>
-              <p className="text-center text-sm text-gray-600">
-                Nagranie dostępne przez 24h po webinarze. Jeśli nie możesz być o {time} — obejrzysz później.
-              </p>
-
-              {/* Zapewnienie o prywatności */}
-              <div className="flex items-center justify-center gap-2 text-sm text-gray-500 pt-2">
-                <Lock className="w-4 h-4" />
-                <span>Szanujemy Twoją prywatność. Bez spamu, gwarantujemy.</span>
-              </div>
             </div>
           </form>
         </motion.div>
