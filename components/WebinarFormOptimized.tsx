@@ -75,7 +75,7 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
       tracking.lead(email, `Webinar ${type === 'egzamin' ? 'Egzamin 8-klasisty' : 'Matura'}`)
 
       // Przekierowanie na thank you page
-      router.push('/webinar/dziekujemy')
+      router.push('/dziekujemy')
     } catch (err) {
       setError('Coś poszło nie tak. Spróbuj ponownie.')
       setIsSubmitting(false)

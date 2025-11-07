@@ -83,7 +83,7 @@ export default function WebinarForm({ type, date, time }: WebinarFormProps) {
         }
 
         // Redirect do strony podziękowania
-        window.location.href = '/webinar/dziekujemy'
+        window.location.href = '/dziekujemy'
       } else {
         setError(data.error || 'Coś poszło nie tak. Spróbuj ponownie.')
       }
