@@ -21,7 +21,7 @@ export default function WhatYouGet({ type }: WhatYouGetProps) {
     {
       icon: <FileText className="w-8 h-8" />,
       title: 'PDF "Plan 6 miesięcy"',
-      description: 'Konkretny harmonogram listopada do maja, moduł po module'
+      description: 'Konkretny harmonogram od listopada do maja, moduł po module'
     },
     {
       icon: <MessageCircle className="w-8 h-8" />,
