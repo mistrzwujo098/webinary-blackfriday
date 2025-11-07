@@ -5,6 +5,7 @@ import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Lock, CheckCircle } from 'lucide-react'
+import { tracking } from '@/lib/tracking'
 
 interface WebinarFormProps {
   type: 'egzamin' | 'matura'
@@ -51,13 +52,9 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
       // Na razie symulacja opóźnienia
       await new Promise(resolve => setTimeout(resolve, 1000))
 
-      // Tracking event (jeśli zintegrowane)
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'generate_lead', {
-          event_category: 'Webinar',
-          event_label: type
-        })
-      }
+      // Tracking Lead Event - WAŻNE: trackuje na wszystkich platformach
+      // (Facebook Pixel, Google Ads, TikTok Pixel)
+      tracking.lead(email, `Webinar ${type === 'egzamin' ? 'Egzamin 8-klasisty' : 'Matura'}`)
 
       // Przekierowanie na thank you page
       router.push('/dziekujemy')
