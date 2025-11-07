@@ -76,7 +76,7 @@ const trackServerSide = async (event: TrackingEvent) => {
   if (!trackingConfig.worker.url) return
 
   try {
-    await fetch(trackingConfig.worker.url, {
+    const response = await fetch(trackingConfig.worker.url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -84,8 +84,16 @@ const trackServerSide = async (event: TrackingEvent) => {
         ...event,
       }),
     })
+
+    // Jeśli worker nie istnieje (404), nie loguj błędu
+    if (!response.ok && response.status !== 404) {
+      console.warn('[Tracking] Server-side warning:', response.status)
+    }
   } catch (error) {
-    console.error('[Tracking] Server-side error:', error)
+    // Ignoruj błędy sieciowe dla opcjonalnego trackingu
+    if (isDevelopment) {
+      console.debug('[Tracking] Server-side tracking unavailable:', error)
+    }
   }
 }
 
