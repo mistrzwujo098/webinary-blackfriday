@@ -4,11 +4,11 @@ Dwie strony zapisu na darmowe webinary Black Friday 2025.
 
 ## Webinary
 
-1. **Egzamin 8-klasisty** - 13 listopada 2025, 18:00
+1. **Egzamin 8-klasisty** - 20 listopada 2025, 18:00
    - URL: `/egzamin-8`
    - System 15 minut dziennie
 
-2. **Matura z Matematyki** - 13 listopada 2025, 19:30
+2. **Matura z Matematyki** - 20 listopada 2025, 19:30
    - URL: `/matura`
    - System 20 minut dziennie (podstawowa i rozszerzona)
 

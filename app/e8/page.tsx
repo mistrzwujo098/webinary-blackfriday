@@ -7,7 +7,7 @@ import WebinarFormOptimized from '@/components/WebinarFormOptimized'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'Webinar: Egzamin 8-klasisty - 13 listopada 18:00 | Paulina od Matematyki',
+  title: 'Webinar: Egzamin 8-klasisty - 20 listopada 18:00 | Paulina od Matematyki',
   description: 'Darmowy webinar dla rodziców 8-klasisty. System 15 minut dziennie od listopada do maja. Zapisz się za darmo!',
 }
 
@@ -21,7 +21,7 @@ export default function Egzamin8Page() {
       <AboutMe />
       <WebinarFormOptimized
         type="egzamin"
-        date="13 listopada"
+        date="20 listopada"
         time="18:00"
       />
       <Footer />

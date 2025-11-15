@@ -9,7 +9,7 @@ export default function HomePage() {
           Darmowe Webinary Black Friday
         </h1>
         <p className="text-xl sm:text-2xl text-gray-700 mb-12">
-          13 listopada 2025 — Paulina od Matematyki
+          20 listopada 2025 — Paulina od Matematyki
         </p>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
@@ -23,7 +23,7 @@ export default function HomePage() {
                 Egzamin 8-klasisty
               </h2>
               <p className="text-lg text-gray-700 mb-4">
-                13 listopada, 18:00
+                20 listopada, 18:00
               </p>
               <p className="text-gray-600 mb-6">
                 System 15 minut dziennie dla rodziców ósmoklasistów
@@ -44,7 +44,7 @@ export default function HomePage() {
                 Matura z Matematyki
               </h2>
               <p className="text-lg text-gray-700 mb-4">
-                13 listopada, 19:30
+                20 listopada, 19:30
               </p>
               <p className="text-gray-600 mb-6">
                 System 20 minut dziennie. Podstawowa i rozszerzona

@@ -66,7 +66,7 @@ export default function ThankYouPage() {
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  Webinar: <strong>13 listopada 2025</strong>. Link do dodania znajdziesz w emailu.
+                  Webinar: <strong>20 listopada 2025</strong>. Link do dodania znajdziesz w emailu.
                   Nie zapomnij — to może zmienić przyszłość Twojego dziecka!
                 </p>
               </div>

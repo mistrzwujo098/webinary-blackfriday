@@ -9,7 +9,7 @@ import WebinarFormOptimized from '@/components/WebinarFormOptimized'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'Webinar: Matura z Matematyki - 13 listopada 19:30 | Paulina od Matematyki',
+  title: 'Webinar: Matura z Matematyki - 20 listopada 19:30 | Paulina od Matematyki',
   description: 'Darmowy webinar dla maturzystów. System 20 minut dziennie. Poziom podstawowy i rozszerzony. Zapisz się za darmo!',
 }
 
@@ -25,7 +25,7 @@ export default function MaturaPage() {
       <AboutMe />
       <WebinarFormOptimized
         type="matura"
-        date="13 listopada"
+        date="20 listopada"
         time="19:30"
       />
       <Footer />

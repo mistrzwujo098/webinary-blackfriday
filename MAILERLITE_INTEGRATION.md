@@ -184,7 +184,7 @@ MAILERLITE_GROUP_ID_MATURA=group_id_dla_matury
 **Delay:** Immediate
 
 **Email:**
-- Subject: "✅ Zapisałeś się na webinar [Egzamin 8/Matura] - 13 listopada"
+- Subject: "✅ Zapisałeś się na webinar [Egzamin 8/Matura] - 20 listopada"
 - Content:
   - Potwierdzenie zapisu
   - Data i godzina webinaru
@@ -205,7 +205,7 @@ MAILERLITE_GROUP_ID_MATURA=group_id_dla_matury
 
 ### Workflow 3: Reminder #2 (1h przed)
 **Trigger:** 1h przed webinarem
-**Delay:** 13 listopada, 17:00 (egzamin) / 18:30 (matura)
+**Delay:** 20 listopada, 17:00 (egzamin) / 18:30 (matura)
 
 **Email + SMS (opcjonalnie):**
 - Subject: "🔴 Za godzinę rozpoczynamy!"
@@ -215,7 +215,7 @@ MAILERLITE_GROUP_ID_MATURA=group_id_dla_matury
   - Support contact
 
 ### Workflow 4: Thank You + Replay (po webinarze)
-**Trigger:** 13 listopada, 20:00 (egzamin) / 21:30 (matura)
+**Trigger:** 20 listopada, 20:00 (egzamin) / 21:30 (matura)
 
 **Email:**
 - Subject: "🎁 Nagranie z webinaru + Materiały"
@@ -273,7 +273,7 @@ export default function ThankYouPage() {
             </ul>
           </div>
           <p className="text-sm text-gray-600">
-            Do zobaczenia 13 listopada! 👋
+            Do zobaczenia 20 listopada! 👋
           </p>
         </div>
       </div>

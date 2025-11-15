@@ -44,7 +44,7 @@ export default function HeroMatura() {
           className="mb-8"
         >
           <p className="text-xl sm:text-2xl text-gray-700 mb-4 font-medium">
-            Darmowy webinar: <span className="text-paulina-primary font-bold">13 listopada, 19:30</span>
+            Darmowy webinar: <span className="text-paulina-primary font-bold">20 listopada, 19:30</span>
           </p>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
             System <strong>20 minut dziennie</strong> — poziom podstawowy i rozszerzony w jednym webinarze.

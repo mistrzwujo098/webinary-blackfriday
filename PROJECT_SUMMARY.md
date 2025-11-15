@@ -11,12 +11,12 @@
 ### 🎯 Dwie strony landing page
 
 1. **Egzamin 8-klasisty** (`/egzamin-8`)
-   - Data webinaru: 13 listopada 2025, 18:00
+   - Data webinaru: 20 listopada 2025, 18:00
    - System 15 minut dziennie
    - Dla rodziców ósmoklas istów
 
 2. **Matura z Matematyki** (`/matura`)
-   - Data webinaru: 13 listopada 2025, 19:30
+   - Data webinaru: 20 listopada 2025, 19:30
    - System 20 minut dziennie
    - Poziom podstawowy i rozszerzony
 

@@ -45,7 +45,7 @@ Użyj kolorów z brand guide:
 ┌─────────────────────────────────────┐
 │                                     │
 │   DARMOWY WEBINAR BLACK FRIDAY      │
-│   13 listopada 2025                 │
+│   20 listopada 2025                 │
 │                                     │
 │   Egzamin 8-klasisty 18:00          │
 │   Matura z Matematyki 19:30         │
