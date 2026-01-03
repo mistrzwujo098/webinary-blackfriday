@@ -6,14 +6,15 @@ export const runtime = 'edge'
 const MAILERLITE_WORKER_URL = process.env.MAILERLITE_WORKER_URL
 const GROUP_IDS = {
   e8: process.env.MAILERLITE_GROUP_ID_E8,
-  matura: process.env.MAILERLITE_GROUP_ID_MATURA
+  matura: process.env.MAILERLITE_GROUP_ID_MATURA,
+  rozszerzenie: process.env.MAILERLITE_GROUP_ID_ROZSZERZENIE
 }
 
 interface SubscribeRequest {
   email: string
   name?: string
   phone?: string
-  type: 'egzamin' | 'matura'
+  type: 'egzamin' | 'matura' | 'rozszerzenie'
   level?: string
 }
 
@@ -38,8 +39,15 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Wybierz grupę na podstawie typu webinaru
-    const groupId = type === 'egzamin' ? GROUP_IDS.e8 : GROUP_IDS.matura
+    // Wybierz grupę na podstawie typu
+    let groupId: string | undefined
+    if (type === 'egzamin') {
+      groupId = GROUP_IDS.e8
+    } else if (type === 'matura') {
+      groupId = GROUP_IDS.matura
+    } else if (type === 'rozszerzenie') {
+      groupId = GROUP_IDS.rozszerzenie
+    }
 
     if (!groupId) {
       console.error(`Group ID not found for type: ${type}`)

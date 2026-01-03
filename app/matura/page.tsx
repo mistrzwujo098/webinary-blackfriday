@@ -1,32 +1,22 @@
 import HeroMatura from '@/components/HeroMatura'
-import SimpleQuestion from '@/components/SimpleQuestion'
 import WhatYouGet from '@/components/WhatYouGet'
-import ForWho from '@/components/ForWho'
-import WhyNovember from '@/components/WhyNovember'
-import RealNumbers from '@/components/RealNumbers'
-import AboutMe from '@/components/AboutMe'
 import WebinarFormOptimized from '@/components/WebinarFormOptimized'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'Webinar: Matura z Matematyki - 20 listopada 19:30 | Paulina od Matematyki',
-  description: 'Darmowy webinar dla maturzystów. System 20 minut dziennie. Poziom podstawowy i rozszerzony. Zapisz się za darmo!',
+  title: 'Próbna Matura Podstawowa Online - 6 stycznia 19:00 | Paulina od Matematyki',
+  description: 'Darmowa próbna matura podstawowa online. Otrzymasz arkusz na maila i rozwiążemy go razem na żywo! 6 stycznia 2026, godz. 19:00.',
 }
 
 export default function MaturaPage() {
   return (
     <main className="min-h-screen bg-white">
       <HeroMatura />
-      <SimpleQuestion />
       <WhatYouGet type="matura" />
-      <ForWho />
-      <WhyNovember />
-      <RealNumbers />
-      <AboutMe />
       <WebinarFormOptimized
         type="matura"
-        date="20 listopada"
-        time="19:30"
+        date="6 stycznia"
+        time="19:00"
       />
       <Footer />
     </main>

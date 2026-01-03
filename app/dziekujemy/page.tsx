@@ -1,6 +1,6 @@
 'use client'
 
-import { CheckCircle, Mail, Calendar, Bell } from 'lucide-react'
+import { CheckCircle, Mail, Calendar, FileText } from 'lucide-react'
 import Link from 'next/link'
 import PhoneUpdateForm from '@/components/PhoneUpdateForm'
 
@@ -15,11 +15,11 @@ export default function ThankYouPage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-paulina-primary mb-4">
-            Gotowe! Jesteś zapisana/y! 🎉
+            Gotowe! Jesteś zapisana/y!
           </h1>
 
           <p className="text-xl sm:text-2xl text-gray-700 mb-2">
-            Za chwilę dostaniesz email z potwierdzeniem
+            Sprawdź swoją skrzynkę mailową
           </p>
 
           <p className="text-lg text-gray-600">
@@ -43,11 +43,11 @@ export default function ThankYouPage() {
                 <div className="flex items-center gap-2 mb-2">
                   <Mail className="w-5 h-5 text-paulina-accent" />
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800">
-                    Sprawdź swoją skrzynkę e-mail
+                    Sprawdź maila — wysłałam Ci arkusz!
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  Za 2-5 minut otrzymasz wiadomość z <strong>potwierdzeniem zapisu</strong> i szczegółami.
+                  Za 2-5 minut otrzymasz wiadomość z <strong>arkuszem próbnym</strong> i linkiem do spotkania.
                   Jeśli nie widzisz emaila, sprawdź folder SPAM lub Oferty.
                 </p>
               </div>
@@ -66,8 +66,8 @@ export default function ThankYouPage() {
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  Webinar: <strong>20 listopada 2025</strong>. Link do dodania znajdziesz w emailu.
-                  Nie zapomnij — to może zmienić przyszłość Twojego dziecka!
+                  Próbne egzaminy odbędą się <strong>5-6 stycznia 2026</strong>. Link do dodania znajdziesz w emailu.
+                  Nie zapomnij — to pomoże Ci przygotować się do prawdziwego egzaminu!
                 </p>
               </div>
             </div>
@@ -79,14 +79,14 @@ export default function ThankYouPage() {
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
-                  <Bell className="w-5 h-5 text-paulina-accent" />
+                  <FileText className="w-5 h-5 text-paulina-accent" />
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800">
-                    Przygotuj kartkę i długopis
+                    Przygotuj kartkę, długopis i kalkulator
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  To nie będzie teoria — dostaniesz <strong>konkretny plan działania</strong>.
-                  Przygotuj się na notowanie praktycznych wskazówek!
+                  Będziemy <strong>rozwiązywać arkusz razem na żywo</strong>.
+                  Przygotuj się jak na prawdziwy egzamin!
                 </p>
               </div>
             </div>
@@ -142,7 +142,7 @@ export default function ThankYouPage() {
             Znasz kogoś, komu to pomoże?
           </h3>
           <p className="text-gray-600 mb-6">
-            Webinar jest <strong>darmowy</strong>. Udostępnij z rodzicami, którym może się przydać!
+            Próbny egzamin jest <strong>darmowy</strong>. Udostępnij znajomym, którym może się przydać!
           </p>
 
           <div className="flex flex-wrap justify-center gap-3">

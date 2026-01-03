@@ -8,7 +8,7 @@ import { CheckCircle } from 'lucide-react'
 import { tracking } from '@/lib/tracking'
 
 interface WebinarFormProps {
-  type: 'egzamin' | 'matura'
+  type: 'egzamin' | 'matura' | 'rozszerzenie'
   date: string
   time: string
 }
@@ -58,7 +58,7 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
         body: JSON.stringify({
           email: email,
           phone: wantSmsReminder && phone ? phone : undefined,
-          type: type === 'egzamin' ? 'egzamin' : 'matura',
+          type: type,
         }),
       })
 
@@ -72,7 +72,12 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
 
       // Tracking Lead Event - WAŻNE: trackuje na wszystkich platformach
       // (Facebook Pixel, Google Ads, TikTok Pixel)
-      tracking.lead(email, `Webinar ${type === 'egzamin' ? 'Egzamin 8-klasisty' : 'Matura'}`)
+      const eventName = type === 'egzamin'
+        ? 'Próbny Egzamin 8-klasisty'
+        : type === 'matura'
+          ? 'Próbna Matura Podstawowa'
+          : 'Próbna Matura Rozszerzona'
+      tracking.lead(email, eventName)
 
       // Przekierowanie na thank you page
       router.push('/dziekujemy')
@@ -92,10 +97,13 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
           {/* Nagłówek */}
           <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-paulina-primary mb-2">
-              Darmowy webinar
+              Darmowy próbny egzamin
             </h2>
             <p className="text-xl sm:text-2xl text-gray-700 font-medium mb-4">
               {date} o {time}
+            </p>
+            <p className="text-base text-paulina-accent font-medium mb-4">
+              Otrzymasz arkusz na maila!
             </p>
 
             {/* Social Proof */}
@@ -110,7 +118,7 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
             {/* Pole Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                Wpisz swój e-mail, aby otrzymać dostęp:
+                Wpisz swój e-mail, aby otrzymać arkusz:
               </label>
               <input
                 type="email"
@@ -175,7 +183,7 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
               whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
               className="w-full bg-gradient-to-r from-paulina-primary to-pink-600 text-white font-bold text-lg sm:text-xl py-4 sm:py-5 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isSubmitting ? 'Zapisuję...' : 'Rezerwuję miejsce za darmo'}
+              {isSubmitting ? 'Zapisuję...' : 'Zapisz się i otrzymaj arkusz'}
             </motion.button>
 
             {/* Tekst informacyjny RODO */}

@@ -35,8 +35,8 @@ export default function HeroMatura() {
           {...fadeIn}
           className="text-4xl sm:text-5xl md:text-6xl font-bold text-paulina-primary mb-6 leading-tight"
         >
-          Matura z matematyki za 6 miesięcy.<br />
-          <span className="text-paulina-accent">Spokojnie. Bez paniki w marcu.</span>
+          Ogólnopolska Próbna Matura<br />
+          <span className="text-paulina-accent">Podstawowa Online</span>
         </motion.h1>
 
         <motion.div
@@ -44,10 +44,10 @@ export default function HeroMatura() {
           className="mb-8"
         >
           <p className="text-xl sm:text-2xl text-gray-700 mb-4 font-medium">
-            Darmowy webinar: <span className="text-paulina-primary font-bold">20 listopada, 19:30</span>
+            <span className="text-paulina-primary font-bold">6 stycznia 2026, godz. 19:00</span>
           </p>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-            System <strong>20 minut dziennie</strong> — poziom podstawowy i rozszerzony w jednym webinarze.
+            Otrzymasz arkusz na maila. <strong>Rozwiązujemy razem na żywo!</strong>
           </p>
         </motion.div>
 
@@ -58,14 +58,14 @@ export default function HeroMatura() {
           whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
           className="inline-block bg-gradient-to-r from-paulina-primary to-pink-600 text-white font-bold text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-5 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 mb-6"
         >
-          Zapisz się za darmo
+          Zapisz się i otrzymaj arkusz
         </motion.button>
 
         <motion.p
           {...fadeIn}
           className="text-sm sm:text-base text-gray-600 max-w-xl mx-auto"
         >
-          Webinar prowadzi <strong>Paulina</strong> — 16 lat przygotowywania do matury, 24 000+ kursantów, średnia powyżej 80%
+          Prowadzi <strong>Paulina od Matematyki</strong> — 16 lat przygotowywania do matury, 24 000+ kursantów
         </motion.p>
 
         <motion.div

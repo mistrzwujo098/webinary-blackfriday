@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
-import { FileText, MessageCircle, Clock, HelpCircle } from 'lucide-react'
+import { FileText, Video, Target, AlertTriangle } from 'lucide-react'
 
 interface Benefit {
   icon: React.ReactNode
@@ -11,65 +11,89 @@ interface Benefit {
 }
 
 interface WhatYouGetProps {
-  type: 'egzamin' | 'matura'
+  type: 'egzamin' | 'matura' | 'rozszerzenie'
 }
 
 export default function WhatYouGet({ type }: WhatYouGetProps) {
   const shouldReduceMotion = useReducedMotion()
 
-  const benefitsEgzamin: Benefit[] = [
+  const benefitsE8: Benefit[] = [
     {
       icon: <FileText className="w-8 h-8" />,
-      title: 'PDF "Plan 6 miesięcy"',
-      description: 'Konkretny harmonogram od listopada do maja, moduł po module'
+      title: 'Arkusz próbny na maila',
+      description: 'Otrzymasz pełny arkusz zgodny z wymaganiami CKE — jak na prawdziwym egzaminie'
     },
     {
-      icon: <MessageCircle className="w-8 h-8" />,
-      title: '3 techniki motywacji dziecka',
-      description: 'Nie "chwal więcej", ale konkretne zdania i reakcje na konkretne sytuacje'
+      icon: <Video className="w-8 h-8" />,
+      title: 'Rozwiązywanie na żywo z Pauliną',
+      description: 'Razem przejdziemy przez każde zadanie, krok po kroku'
     },
     {
-      icon: <Clock className="w-8 h-8" />,
-      title: 'System 15 minut dziennie',
-      description: 'O której godzinie, jak zacząć, co robić, gdy dziecko się opiera'
+      icon: <Target className="w-8 h-8" />,
+      title: 'Omówienie każdego zadania',
+      description: 'Zobaczysz jak zdobywać punkty i unikać typowych błędów'
     },
     {
-      icon: <HelpCircle className="w-8 h-8" />,
-      title: 'Pytania i odpowiedzi na żywo',
-      description: 'Masz konkretny problem? Pytaj, odpowiem wszystkim'
+      icon: <AlertTriangle className="w-8 h-8" />,
+      title: 'Wskazówki jak unikać pułapek',
+      description: 'Pokażę najczęstsze błędy i jak ich unikać na prawdziwym egzaminie'
     }
   ]
 
   const benefitsMatura: Benefit[] = [
     {
       icon: <FileText className="w-8 h-8" />,
-      title: 'PDF "Mapa 15 modułów"',
-      description: 'Wszystkie tematy z matury, w kolejności od najważniejszych (dla podstawy i rozszerzenia)'
+      title: 'Arkusz próbny na maila',
+      description: 'Pełny arkusz matury podstawowej zgodny z wymaganiami CKE'
     },
     {
-      icon: <FileText className="w-8 h-8" />,
-      title: 'Checklista "Co umieć na 80%"',
-      description: 'Konkretne umiejętności, które dają najwięcej punktów'
+      icon: <Video className="w-8 h-8" />,
+      title: 'Rozwiązywanie na żywo',
+      description: 'Wspólnie przejdziemy przez cały arkusz, zadanie po zadaniu'
     },
     {
-      icon: <Clock className="w-8 h-8" />,
-      title: 'System 20 minut dziennie',
-      description: 'Jak organizować naukę, aby nie marnować czasu'
+      icon: <Target className="w-8 h-8" />,
+      title: 'Strategie punktacji',
+      description: 'Dowiesz się jak zdobywać maksimum punktów za każde zadanie'
     },
     {
-      icon: <MessageCircle className="w-8 h-8" />,
-      title: '3 techniki zarządzania stresem',
-      description: 'Nie "wierz w siebie", konkretne ćwiczenia, które działają'
-    },
-    {
-      icon: <HelpCircle className="w-8 h-8" />,
-      title: 'Pytania i odpowiedzi na żywo',
-      description: 'Pytania o twoje konkretne problemy, odpowiedzi dla wszystkich'
+      icon: <AlertTriangle className="w-8 h-8" />,
+      title: 'Analiza typowych pułapek',
+      description: 'Poznasz najczęstsze błędy maturzystów i jak ich unikać'
     }
   ]
 
-  const benefits = type === 'egzamin' ? benefitsEgzamin : benefitsMatura
-  const duration = type === 'egzamin' ? '45 minut' : '60 minut'
+  const benefitsRozszerzenie: Benefit[] = [
+    {
+      icon: <FileText className="w-8 h-8" />,
+      title: 'Arkusz rozszerzenia na maila',
+      description: 'Pełny arkusz matury rozszerzonej zgodny z wymaganiami CKE'
+    },
+    {
+      icon: <Video className="w-8 h-8" />,
+      title: 'Rozwiązywanie zadań z omówieniem',
+      description: 'Przejdziemy przez najtrudniejsze zadania rozszerzenia'
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: 'Strategie czasowe',
+      description: 'Jak rozplanować czas na egzaminie, żeby zdążyć z wszystkim'
+    },
+    {
+      icon: <AlertTriangle className="w-8 h-8" />,
+      title: 'Typowe pułapki w zadaniach',
+      description: 'Gdzie najczęściej tracisz punkty i jak tego unikać'
+    }
+  ]
+
+  let benefits: Benefit[]
+  if (type === 'egzamin') {
+    benefits = benefitsE8
+  } else if (type === 'matura') {
+    benefits = benefitsMatura
+  } else {
+    benefits = benefitsRozszerzenie
+  }
 
   const fadeInUp = shouldReduceMotion
     ? { initial: { opacity: 1 }, animate: { opacity: 1 } }
@@ -87,14 +111,14 @@ export default function WhatYouGet({ type }: WhatYouGetProps) {
           {...fadeInUp}
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-paulina-primary mb-4"
         >
-          Co dostaniesz
+          Co otrzymasz
         </motion.h2>
 
         <motion.p
           {...fadeInUp}
           className="text-xl text-center text-gray-600 mb-12"
         >
-          Na webinarze ({duration}):
+          Na próbnym egzaminie online:
         </motion.p>
 
         <div className="grid sm:grid-cols-2 gap-6">
@@ -136,7 +160,7 @@ export default function WhatYouGet({ type }: WhatYouGetProps) {
           {...fadeInUp}
           className="text-lg sm:text-xl text-center text-gray-700 mt-12 font-medium max-w-2xl mx-auto"
         >
-          To nie będzie gadanie o niczym. Konkretne narzędzia, które możesz wdrożyć już od piątku.
+          Sprawdź swoją wiedzę przed prawdziwym egzaminem!
         </motion.p>
       </div>
     </section>

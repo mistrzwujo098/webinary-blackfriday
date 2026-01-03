@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { ArrowDown } from 'lucide-react'
 
-export default function HeroEgzamin() {
+export default function HeroRozszerzenie() {
   const shouldReduceMotion = useReducedMotion()
 
   const fadeIn = shouldReduceMotion
@@ -35,8 +35,8 @@ export default function HeroEgzamin() {
           {...fadeIn}
           className="text-4xl sm:text-5xl md:text-6xl font-bold text-paulina-primary mb-6 leading-tight"
         >
-          Ogólnopolski Próbny Egzamin<br />
-          <span className="text-paulina-accent">Ósmoklasisty Online</span>
+          Ogólnopolska Próbna Matura<br />
+          <span className="text-paulina-accent">Rozszerzona Online</span>
         </motion.h1>
 
         <motion.div
@@ -44,7 +44,7 @@ export default function HeroEgzamin() {
           className="mb-8"
         >
           <p className="text-xl sm:text-2xl text-gray-700 mb-4 font-medium">
-            <span className="text-paulina-primary font-bold">6 stycznia 2026, godz. 17:15</span>
+            <span className="text-paulina-primary font-bold">5 stycznia 2026, godz. 18:00</span>
           </p>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
             Otrzymasz arkusz na maila. <strong>Rozwiązujemy razem na żywo!</strong>
@@ -65,7 +65,7 @@ export default function HeroEgzamin() {
           {...fadeIn}
           className="text-sm sm:text-base text-gray-600 max-w-xl mx-auto"
         >
-          Prowadzi <strong>Paulina od Matematyki</strong> — 16 lat doświadczenia, 24 000+ kursantów
+          Prowadzi <strong>Paulina od Matematyki</strong> — 16 lat przygotowywania do matury, 24 000+ kursantów
         </motion.p>
 
         <motion.div
