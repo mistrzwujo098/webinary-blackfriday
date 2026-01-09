@@ -8,10 +8,10 @@ export default function Footer() {
           Masz pytania?
         </p>
         <a
-          href="mailto:paulina@skutecznekorepetycje.com"
+          href="mailto:kontakt@paulinaodmatematyki.com"
           className="text-paulina-accent hover:text-white transition-colors duration-300 font-medium text-lg"
         >
-          paulina@skutecznekorepetycje.com
+          kontakt@paulinaodmatematyki.com
         </a>
         <div className="mt-6 pt-6 border-t border-white/20 text-sm text-gray-300">
           <p>&copy; 2025 Paulina od Matematyki. Wszystkie prawa zastrzeżone.</p>

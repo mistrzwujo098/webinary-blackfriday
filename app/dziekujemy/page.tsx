@@ -1,8 +1,7 @@
 'use client'
 
-import { CheckCircle, Mail, Calendar, FileText } from 'lucide-react'
+import { CheckCircle, Mail, Calendar, Bell } from 'lucide-react'
 import Link from 'next/link'
-import PhoneUpdateForm from '@/components/PhoneUpdateForm'
 
 export default function ThankYouPage() {
   return (
@@ -43,11 +42,11 @@ export default function ThankYouPage() {
                 <div className="flex items-center gap-2 mb-2">
                   <Mail className="w-5 h-5 text-paulina-accent" />
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800">
-                    Sprawdź maila — wysłałam Ci arkusz!
+                    Sprawdź maila — wysłałam Ci potwierdzenie!
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  Za 2-5 minut otrzymasz wiadomość z <strong>arkuszem próbnym</strong> i linkiem do spotkania.
+                  Za 2-5 minut otrzymasz wiadomość z <strong>linkiem do webinaru</strong> i szczegółami.
                   Jeśli nie widzisz emaila, sprawdź folder SPAM lub Oferty.
                 </p>
               </div>
@@ -62,12 +61,12 @@ export default function ThankYouPage() {
                 <div className="flex items-center gap-2 mb-2">
                   <Calendar className="w-5 h-5 text-paulina-accent" />
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800">
-                    Dodaj do kalendarza
+                    Dodaj do kalendarza: 19 stycznia
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  Próbne egzaminy odbędą się <strong>5-6 stycznia 2026</strong>. Link do dodania znajdziesz w emailu.
-                  Nie zapomnij — to pomoże Ci przygotować się do prawdziwego egzaminu!
+                  Webinar odbędzie się <strong>19 stycznia 2026 (niedziela)</strong>.
+                  Link do dodania do kalendarza znajdziesz w emailu.
                 </p>
               </div>
             </div>
@@ -79,28 +78,40 @@ export default function ThankYouPage() {
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
-                  <FileText className="w-5 h-5 text-paulina-accent" />
+                  <Bell className="w-5 h-5 text-paulina-accent" />
                   <h3 className="text-lg sm:text-xl font-bold text-gray-800">
-                    Przygotuj kartkę, długopis i kalkulator
+                    Przyjdź na żywo!
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  Będziemy <strong>rozwiązywać arkusz razem na żywo</strong>.
-                  Przygotuj się jak na prawdziwy egzamin!
+                  Na webinarze pokażę Ci <strong>twarde dane</strong> i konkretny plan działania.
+                  Będzie też możliwość zadawania pytań na czacie.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Phone Update Form */}
-        <div className="mb-8">
-          <PhoneUpdateForm />
-        </div>
-
-        {/* Social Media - Dołącz do społeczności */}
+        {/* Info box */}
         <div className="bg-paulina-bg-yellow rounded-3xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-paulina-primary mb-4 text-center">
+            O czym będzie webinar?
+          </h2>
+
+          <div className="text-center text-gray-700 space-y-3">
+            <p>
+              <strong>„Styczeń vs. marzec: Dlaczego 8 tygodni różnicy to nawet 25 punktów"</strong>
+            </p>
+            <p>
+              Pokażę Ci dane z poprzednich lat — ile punktów „kosztuje" każdy tydzień zwłoki
+              i co zrobić, żeby Twoje dziecko (lub Ty) zdążyło na spokojny wynik.
+            </p>
+          </div>
+        </div>
+
+        {/* Social Media */}
+        <div className="bg-white rounded-3xl shadow-lg p-8 mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-paulina-primary mb-4 text-center">
             W międzyczasie...
           </h2>
 
@@ -142,7 +153,7 @@ export default function ThankYouPage() {
             Znasz kogoś, komu to pomoże?
           </h3>
           <p className="text-gray-600 mb-6">
-            Próbny egzamin jest <strong>darmowy</strong>. Udostępnij znajomym, którym może się przydać!
+            Webinar jest <strong>darmowy</strong>. Udostępnij znajomym, którym może się przydać!
           </p>
 
           <div className="flex flex-wrap justify-center gap-3">
@@ -152,7 +163,7 @@ export default function ThankYouPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2 bg-gray-100 text-gray-700 font-medium rounded-full hover:bg-gray-200 transition-colors text-sm"
             >
-              Udostępnij
+              Udostępnij na Facebook
             </a>
           </div>
         </div>
