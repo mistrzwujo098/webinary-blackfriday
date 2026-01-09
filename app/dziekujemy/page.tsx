@@ -65,7 +65,7 @@ export default function ThankYouPage() {
                   </h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  Webinar odbędzie się <strong>19 stycznia 2026 (niedziela)</strong>.
+                  Webinar odbędzie się <strong>19 stycznia 2026 (poniedziałek)</strong>.
                   Link do dodania do kalendarza znajdziesz w emailu.
                 </p>
               </div>
