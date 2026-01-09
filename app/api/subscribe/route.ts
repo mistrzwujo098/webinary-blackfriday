@@ -8,14 +8,15 @@ const GROUP_IDS = {
   e8: process.env.MAILERLITE_GROUP_ID_E8,
   matura: process.env.MAILERLITE_GROUP_ID_MATURA,
   rozszerzenie: process.env.MAILERLITE_GROUP_ID_ROZSZERZENIE,
-  e8styczen: process.env.MAILERLITE_GROUP_ID_E8_STYCZEN
+  e8styczen: process.env.MAILERLITE_GROUP_ID_E8_STYCZEN,
+  maturastyczen: process.env.MAILERLITE_GROUP_ID_MATURA_STYCZEN
 }
 
 interface SubscribeRequest {
   email: string
   name?: string
   phone?: string
-  type: 'egzamin' | 'matura' | 'rozszerzenie' | 'e8styczen'
+  type: 'egzamin' | 'matura' | 'rozszerzenie' | 'e8styczen' | 'maturastyczen'
   level?: string
 }
 
@@ -50,6 +51,8 @@ export async function POST(request: NextRequest) {
       groupId = GROUP_IDS.rozszerzenie
     } else if (type === 'e8styczen') {
       groupId = GROUP_IDS.e8styczen
+    } else if (type === 'maturastyczen') {
+      groupId = GROUP_IDS.maturastyczen
     }
 
     if (!groupId) {
