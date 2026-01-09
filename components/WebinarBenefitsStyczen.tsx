@@ -21,7 +21,7 @@ export default function WebinarBenefitsStyczen() {
     },
     {
       icon: <Calendar className="w-7 h-7" />,
-      title: 'Matematyka 150 dni',
+      title: 'Matematyka 120 dni',
       description: 'Pokażę Ci ile materiału da się przerobić przy 15-20 min dziennie. I dlaczego styczeń daje bufor na choroby i klasówki.'
     },
     {

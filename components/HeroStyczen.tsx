@@ -46,7 +46,7 @@ export default function HeroStyczen() {
         >
           Styczeń vs. marzec:<br />
           <span className="text-paulina-accent">Dlaczego 8 tygodni różnicy</span><br />
-          to 25 punktów na egzaminie
+          to nawet 25 punktów na egzaminie
         </motion.h1>
 
         {/* Subheadline - konkretna obietnica */}
