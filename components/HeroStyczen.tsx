@@ -57,7 +57,7 @@ export default function HeroStyczen() {
           <p className="text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto mb-6 leading-relaxed">
             Pokażę Ci <strong>twarde dane</strong> z poprzednich lat. Zobaczysz ile punktów
             "kosztuje" każdy tydzień zwłoki — i co zrobić, żeby Twoje dziecko
-            zdążyło na spokojną ósemkę.
+            zdało na spokojnie egzamin.
           </p>
 
           {/* Data i czas - wyraźnie widoczne */}
