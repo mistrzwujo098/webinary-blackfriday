@@ -16,13 +16,13 @@ export default function WebinarBenefitsStyczen() {
   const benefits: Benefit[] = [
     {
       icon: <BarChart3 className="w-7 h-7" />,
-      title: 'Twarde dane z poprzednich lat',
-      description: 'Zobaczysz wyniki uczniów, którzy zaczęli w styczniu vs. tych, którzy zaczęli w marcu. Bez straszenia — same liczby.'
+      title: 'Wyniki z poprzednich lat',
+      description: 'Zobaczysz wyniki uczniów z poprzednich edycji egzaminu. Bez straszenia — same liczby.'
     },
     {
       icon: <Calendar className="w-7 h-7" />,
       title: 'Matematyka 120 dni',
-      description: 'Pokażę Ci ile materiału da się przerobić przy 15-20 min dziennie. I dlaczego styczeń daje bufor na choroby i klasówki.'
+      description: 'Pokażę Ci ile materiału da się przerobić przy 25-30 minutach dziennie. I dlaczego warto zacząć wcześniej — bufor na choroby i klasówki.'
     },
     {
       icon: <Target className="w-7 h-7" />,

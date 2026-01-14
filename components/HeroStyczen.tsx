@@ -93,7 +93,7 @@ export default function HeroStyczen() {
             Prowadzi <strong>Paulina od Matematyki</strong> — 16 lat doświadczenia, 24 000+ kursantów
           </p>
           <p className="text-xs sm:text-sm text-gray-500">
-            Dane na podstawie ankiet wśród kursantów z lat 2023-2025
+            Na podstawie doświadczeń poprzednich kursantów
           </p>
         </motion.div>
 

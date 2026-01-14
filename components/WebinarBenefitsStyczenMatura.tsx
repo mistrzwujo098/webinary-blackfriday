@@ -16,13 +16,13 @@ export default function WebinarBenefitsStyczenMatura() {
   const benefits: Benefit[] = [
     {
       icon: <BarChart3 className="w-7 h-7" />,
-      title: 'Twarde dane z poprzednich lat',
-      description: 'Zobaczysz wyniki maturzystów, którzy zaczęli w styczniu vs. tych, którzy zaczęli w marcu. Bez straszenia — same liczby.'
+      title: 'Wyniki z poprzednich lat',
+      description: 'Zobaczysz wyniki maturzystów z poprzednich edycji. Bez straszenia — same liczby.'
     },
     {
       icon: <Calendar className="w-7 h-7" />,
       title: 'Matematyka 120 dni',
-      description: 'Pokażę Ci ile materiału da się przerobić przy 20-30 min dziennie. I dlaczego styczeń daje bufor na sprawdziany i inne przedmioty.'
+      description: 'Pokażę Ci ile materiału da się przerobić przy 25-30 minutach dziennie. I dlaczego warto zacząć wcześniej — bufor na sprawdziany i inne przedmioty.'
     },
     {
       icon: <Target className="w-7 h-7" />,

@@ -102,7 +102,7 @@ export default function WebinarFormStyczen() {
               </div>
               <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
                 <Clock className="w-4 h-4" />
-                <span>ok. 45 minut</span>
+                <span>ok. 60 minut</span>
               </div>
             </div>
           </div>
