@@ -1,3 +1,4 @@
+import LiveWebinar from '@/components/LiveWebinar'
 import HeroStyczen from '@/components/HeroStyczen'
 import WebinarBenefitsStyczen from '@/components/WebinarBenefitsStyczen'
 import WebinarFormStyczen from '@/components/WebinarFormStyczen'
@@ -16,6 +17,7 @@ export const metadata = {
 export default function E8StyczenPage() {
   return (
     <main className="min-h-screen bg-white">
+      <LiveWebinar streamUrl="https://streamyard.com/watch/7pcyKs6un34r" />
       <HeroStyczen />
       <WebinarBenefitsStyczen />
       <WebinarFormStyczen />

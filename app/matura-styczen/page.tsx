@@ -1,3 +1,4 @@
+import LiveWebinar from '@/components/LiveWebinar'
 import HeroStyczenMatura from '@/components/HeroStyczenMatura'
 import WebinarBenefitsStyczenMatura from '@/components/WebinarBenefitsStyczenMatura'
 import WebinarFormStyczenMatura from '@/components/WebinarFormStyczenMatura'
@@ -16,6 +17,7 @@ export const metadata = {
 export default function MaturaStyczenPage() {
   return (
     <main className="min-h-screen bg-white">
+      <LiveWebinar streamUrl="https://streamyard.com/watch/YhKSCX44dHTx" />
       <HeroStyczenMatura />
       <WebinarBenefitsStyczenMatura />
       <WebinarFormStyczenMatura />
