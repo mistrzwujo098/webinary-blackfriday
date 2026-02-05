@@ -11,7 +11,7 @@ export default function HomePage() {
         <p className="text-xl sm:text-2xl text-gray-700 mb-4">
           5-6 stycznia 2026 — Paulina od Matematyki
         </p>
-        <p className="text-lg text-paulina-accent font-medium mb-12">
+        <p className="text-lg text-paulina-accent font-semibold mb-12">
           Otrzymasz arkusz na maila. Rozwiązujemy razem na żywo!
         </p>
 
@@ -25,7 +25,7 @@ export default function HomePage() {
               <h2 className="text-xl sm:text-2xl font-bold text-paulina-primary mb-3">
                 Egzamin Ósmoklasisty
               </h2>
-              <p className="text-lg text-gray-700 mb-3 font-medium">
+              <p className="text-lg text-gray-700 mb-3 font-semibold">
                 6 stycznia, 17:15
               </p>
               <p className="text-gray-600 mb-5 text-sm">
@@ -46,7 +46,7 @@ export default function HomePage() {
               <h2 className="text-xl sm:text-2xl font-bold text-paulina-primary mb-3">
                 Matura Rozszerzona
               </h2>
-              <p className="text-lg text-gray-700 mb-3 font-medium">
+              <p className="text-lg text-gray-700 mb-3 font-semibold">
                 5 stycznia, 18:00
               </p>
               <p className="text-gray-600 mb-5 text-sm">
@@ -67,7 +67,7 @@ export default function HomePage() {
               <h2 className="text-xl sm:text-2xl font-bold text-paulina-primary mb-3">
                 Matura Podstawowa
               </h2>
-              <p className="text-lg text-gray-700 mb-3 font-medium">
+              <p className="text-lg text-gray-700 mb-3 font-semibold">
                 6 stycznia, 19:00
               </p>
               <p className="text-gray-600 mb-5 text-sm">

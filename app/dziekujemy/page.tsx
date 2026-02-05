@@ -161,7 +161,7 @@ export default function ThankYouPage() {
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://paulinaodmatematyki.com/webinar/')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2 bg-gray-100 text-gray-700 font-medium rounded-full hover:bg-gray-200 transition-colors text-sm"
+              className="inline-flex items-center gap-2 px-5 py-2 bg-gray-100 text-gray-700 font-semibold rounded-full hover:bg-gray-200 transition-colors text-sm"
             >
               Udostępnij na Facebook
             </a>
@@ -172,7 +172,7 @@ export default function ThankYouPage() {
         <div className="text-center mt-12">
           <Link
             href="/"
-            className="text-paulina-accent hover:text-paulina-primary transition-colors font-medium"
+            className="text-paulina-accent hover:text-paulina-primary transition-colors font-semibold"
           >
             ← Powrót do strony głównej
           </Link>

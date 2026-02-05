@@ -75,7 +75,7 @@ export default function PhoneUpdateForm() {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
             Twój email (użyty przy zapisie)
           </label>
           <input
@@ -90,7 +90,7 @@ export default function PhoneUpdateForm() {
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
             Numer telefonu
           </label>
           <input

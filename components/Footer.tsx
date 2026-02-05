@@ -9,7 +9,7 @@ export default function Footer() {
         </p>
         <a
           href="mailto:kontakt@paulinaodmatematyki.com"
-          className="text-paulina-accent hover:text-white transition-colors duration-300 font-medium text-lg"
+          className="text-paulina-accent hover:text-white transition-colors duration-300 font-semibold text-lg"
         >
           kontakt@paulinaodmatematyki.com
         </a>

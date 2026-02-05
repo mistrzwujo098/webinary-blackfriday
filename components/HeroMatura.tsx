@@ -43,7 +43,7 @@ export default function HeroMatura() {
           {...scaleIn}
           className="mb-8"
         >
-          <p className="text-xl sm:text-2xl text-gray-700 mb-4 font-medium">
+          <p className="text-xl sm:text-2xl text-gray-700 mb-4 font-semibold">
             <span className="text-paulina-primary font-bold">6 stycznia 2026, godz. 19:00</span>
           </p>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">

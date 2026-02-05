@@ -76,7 +76,7 @@ export default function AboutMe() {
               <h3 className="text-2xl sm:text-3xl font-bold text-paulina-primary mb-2">
                 Paulina
               </h3>
-              <p className="text-lg text-paulina-accent font-medium">
+              <p className="text-lg text-paulina-accent font-semibold">
                 Ekspertka od Matematyki
               </p>
             </div>

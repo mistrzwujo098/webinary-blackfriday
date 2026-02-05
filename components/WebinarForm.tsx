@@ -105,13 +105,13 @@ export default function WebinarForm({ type, date, time }: WebinarFormProps) {
           <h2 className="text-3xl sm:text-4xl font-bold text-paulina-primary mb-2 text-center">
             Darmowy webinar
           </h2>
-          <p className="text-xl sm:text-2xl text-center text-gray-700 mb-8 font-medium">
+          <p className="text-xl sm:text-2xl text-center text-gray-700 mb-8 font-semibold">
             {date} o {time}
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
                 Imię
               </label>
               <input
@@ -126,7 +126,7 @@ export default function WebinarForm({ type, date, time }: WebinarFormProps) {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
                 Email
               </label>
               <input
@@ -156,7 +156,7 @@ export default function WebinarForm({ type, date, time }: WebinarFormProps) {
 
             {formData.wantSmsReminder && (
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
                   Numer telefonu
                 </label>
                 <input
@@ -173,7 +173,7 @@ export default function WebinarForm({ type, date, time }: WebinarFormProps) {
 
             {type === 'matura' && (
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-3">
+                <label className="block text-sm font-semibold text-gray-700 mb-3">
                   Zapisuję się na:
                 </label>
                 <div className="space-y-3">

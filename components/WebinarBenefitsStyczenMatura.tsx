@@ -125,7 +125,7 @@ export default function WebinarBenefitsStyczenMatura() {
           {...fadeInUp}
           className="mt-12 text-center"
         >
-          <p className="text-lg sm:text-xl text-gray-700 font-medium max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-700 font-semibold max-w-2xl mx-auto">
             Webinar jest <strong>bezpłatny</strong>. Po prostu chcę, żebyś mógł/mogła
             podjąć świadomą decyzję — z danymi, nie z domysłami.
           </p>

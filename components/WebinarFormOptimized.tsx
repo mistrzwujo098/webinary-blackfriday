@@ -99,15 +99,15 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
             <h2 className="text-3xl sm:text-4xl font-bold text-paulina-primary mb-2">
               Darmowy próbny egzamin
             </h2>
-            <p className="text-xl sm:text-2xl text-gray-700 font-medium mb-4">
+            <p className="text-xl sm:text-2xl text-gray-700 font-semibold mb-4">
               {date} o {time}
             </p>
-            <p className="text-base text-paulina-accent font-medium mb-4">
+            <p className="text-base text-paulina-accent font-semibold mb-4">
               Otrzymasz arkusz na maila!
             </p>
 
             {/* Social Proof */}
-            <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+            <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
               <CheckCircle className="w-4 h-4" />
               <span>Już 1 247 osób się zapisało</span>
             </div>
@@ -144,7 +144,7 @@ export default function WebinarFormOptimized({ type, date, time }: WebinarFormPr
                   }}
                   className="w-5 h-5 mt-1 text-paulina-primary focus:ring-paulina-primary rounded flex-shrink-0"
                 />
-                <span className="ml-3 text-sm text-gray-700 leading-relaxed font-medium">
+                <span className="ml-3 text-sm text-gray-700 leading-relaxed font-semibold">
                   Chcę przypomnienie SMS godzinę przed webinarem (opcjonalnie)
                 </span>
               </label>

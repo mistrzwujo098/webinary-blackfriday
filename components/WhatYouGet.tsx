@@ -158,7 +158,7 @@ export default function WhatYouGet({ type }: WhatYouGetProps) {
 
         <motion.p
           {...fadeInUp}
-          className="text-lg sm:text-xl text-center text-gray-700 mt-12 font-medium max-w-2xl mx-auto"
+          className="text-lg sm:text-xl text-center text-gray-700 mt-12 font-semibold max-w-2xl mx-auto"
         >
           Sprawdź swoją wiedzę przed prawdziwym egzaminem!
         </motion.p>

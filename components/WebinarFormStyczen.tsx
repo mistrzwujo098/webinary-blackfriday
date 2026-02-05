@@ -84,7 +84,7 @@ export default function WebinarFormStyczen() {
             <h2 className="text-2xl sm:text-3xl font-bold text-paulina-primary mb-2">
               Zapisz się na darmowy webinar
             </h2>
-            <p className="text-xl sm:text-2xl text-gray-700 font-medium mb-4">
+            <p className="text-xl sm:text-2xl text-gray-700 font-semibold mb-4">
               19 stycznia o 18:00
             </p>
 
@@ -96,11 +96,11 @@ export default function WebinarFormStyczen() {
 
             {/* Social Proof */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
-              <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+              <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
                 <Users className="w-4 h-4" />
                 <span>Już 847 rodziców się zapisało</span>
               </div>
-              <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
+              <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold">
                 <Clock className="w-4 h-4" />
                 <span>ok. 60 minut</span>
               </div>
@@ -138,7 +138,7 @@ export default function WebinarFormStyczen() {
                   }}
                   className="w-5 h-5 mt-1 text-paulina-primary focus:ring-paulina-primary rounded flex-shrink-0"
                 />
-                <span className="ml-3 text-sm text-gray-700 leading-relaxed font-medium">
+                <span className="ml-3 text-sm text-gray-700 leading-relaxed font-semibold">
                   Chcę przypomnienie SMS godzinę przed webinarem (opcjonalnie)
                 </span>
               </label>
@@ -182,7 +182,7 @@ export default function WebinarFormStyczen() {
 
             {/* Co dostaniesz */}
             <div className="pt-4 space-y-2">
-              <p className="text-center text-sm text-gray-600 font-medium">
+              <p className="text-center text-sm text-gray-600 font-semibold">
                 Po zapisaniu otrzymasz:
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 text-sm text-gray-500">

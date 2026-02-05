@@ -27,7 +27,7 @@ export default function WhyFree() {
 
         <motion.p
           {...fadeInUp}
-          className="text-xl sm:text-2xl text-gray-700 mb-6 font-medium"
+          className="text-xl sm:text-2xl text-gray-700 mb-6 font-semibold"
         >
           Szczerze?
         </motion.p>

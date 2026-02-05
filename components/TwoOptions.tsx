@@ -68,7 +68,7 @@ export default function TwoOptions() {
 
         <motion.p
           {...fadeInUp}
-          className="text-xl sm:text-2xl text-center text-gray-800 mt-12 font-medium"
+          className="text-xl sm:text-2xl text-center text-gray-800 mt-12 font-semibold"
         >
           Na webinarze pokażę dokładnie, jak przejść ze scenariusza A do B.
         </motion.p>
