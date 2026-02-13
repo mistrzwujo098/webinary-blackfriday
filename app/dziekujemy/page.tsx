@@ -133,7 +133,7 @@ export default function ThankYouPage() {
             </a>
 
             <a
-              href="https://instagram.com/paulinaodmatematyki"
+              href="https://www.instagram.com/paulinaodmatematyki"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] text-white font-semibold rounded-full hover:opacity-90 transition-opacity"

@@ -13,7 +13,7 @@
 ## GRAFIKA 1: EGZAMIN ÓSMOKLASISTY (dla rodziców)
 
 ### Format: 1080x1080px (kwadrat) + 1080x1920px (story)
-
+q
 ---
 
 ### WERSJA A: KWADRAT (1080x1080)

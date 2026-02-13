@@ -130,8 +130,8 @@ Konfiguracja w Cloudflare:
 
 ## License
 
-© 2025 Paulina od Matematyki. Wsz ystkie prawa zastrzeżone.
+© 2025 Paulina od Matematyki. Wszystkie prawa zastrzeżone.
 
 ## Kontakt
 
-kontakt@paulinaodmatematyki.pl
+kontakt@paulinaodmatematyki.com
