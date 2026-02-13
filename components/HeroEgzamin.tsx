@@ -56,7 +56,7 @@ export default function HeroEgzamin() {
           {...scaleIn}
           whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
           whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
-          className="inline-block bg-gradient-to-r from-paulina-primary to-pink-600 text-white font-bold text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-5 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 mb-6"
+          className="inline-block bg-gradient-to-r from-paulina-primary to-purple-700 text-white font-bold text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-5 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 mb-6"
         >
           Zapisz się i otrzymaj arkusz
         </motion.button>
