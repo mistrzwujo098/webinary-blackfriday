@@ -18,8 +18,9 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Darmowe Webinary Black Friday - Paulina od Matematyki',
-  description: 'Zapisz się na darmowe webinary 20 listopada 2025',
+  title: 'Darmowe Webinary - Paulina od Matematyki',
+  description: 'Darmowe webinary z matematyki od Pauliny od Matematyki.',
+  robots: { index: false, follow: false },
   icons: {
     icon: '/webinar/favicon.ico',
     apple: '/webinar/icon.png',
