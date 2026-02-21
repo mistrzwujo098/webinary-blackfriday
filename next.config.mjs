@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   basePath: '/webinar',
+  experimental: {
+    inlineCss: true,
+  },
   images: {
     remotePatterns: [
       {
