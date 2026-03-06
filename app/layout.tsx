@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Varela_Round, Montserrat } from 'next/font/google'
 import './globals.css'
-import TrackingScripts from '@/components/tracking/TrackingScripts'
 
 const varelaRound = Varela_Round({
   weight: '400',
@@ -39,7 +38,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://assets.mailerlite.com" />
       </head>
       <body>
-        <TrackingScripts />
         {children}
       </body>
     </html>
